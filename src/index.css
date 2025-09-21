@@ -1,0 +1,12 @@
+* {
+  background-color: rgb(12, 12, 174);
+  color: white;
+}
+
+.h-200 {
+  height: 250px;
+}
+
+#logo {
+  height: 100%;
+}

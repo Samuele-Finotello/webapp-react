@@ -2,8 +2,12 @@
 
 const Header = () => {
   return (
-    <header>
-      <h1>HEADER</h1>
+    <header className="container">
+      <div className="row">
+        <div className="col-12 h-200">
+          <img id="logo" src="../logo.png" alt="Logo" />
+        </div>
+      </div>
     </header>
   )
 }
