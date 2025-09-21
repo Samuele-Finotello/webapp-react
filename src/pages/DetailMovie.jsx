@@ -3,7 +3,7 @@ import React from 'react'
 const DetailMovie = () => {
   return (
     <div>
-      <h1>Dettaglio film</h1>
+      <h1 className='text-red mt-4'>Dettaglio film</h1>
     </div>
   )
 }
