@@ -31,10 +31,13 @@ div img {
   height: 100%;
   width: 100%;
   background-color: rgb(249, 72, 82);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .card:hover .overlay {
-  opacity: 1;
+  opacity: 0.75;
 }
 
 .text-red {

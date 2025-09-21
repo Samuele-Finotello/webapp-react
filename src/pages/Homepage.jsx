@@ -1,6 +1,18 @@
-import React from 'react'
+import axios from "axios"
+import { useState, useEffect } from "react"
 
 const Homepage = () => {
+
+  const [movies, setMovies] = useState([])
+
+  const fetchMovies = () => {
+    axios.get('http://localhost:3000/db/movies').then(resp => {
+      setMovies(resp.data);
+    }).catch(err => console.log(err))
+  }
+
+  useEffect(fetchMovies, [])
+
   return (
     <div className='container'>
       <div className="row">
