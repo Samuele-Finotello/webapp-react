@@ -6,39 +6,42 @@ const DetailMovie = () => {
 
   const { id } = useParams()
 
-  const [movies, setMovies] = useState([])
+  const [movie, setMovie] = useState({})
 
-  const fetchMovies = () => {
+  const fetchMovie = () => {
     axios.get(`http://localhost:3000/db/movies/${id}`).then(resp => {
-      setMovies(resp.data)
+      setMovie(resp.data)
     })
   }
 
-  useEffect(fetchMovies, [])
+  useEffect(fetchMovie, [])
 
   return (
     <div className='container'>
       <div className="row">
-        <div className="col-12 my-5 bg-red p-0 rounded-4">
+        <div className="col-12 my-5 bg-light-blue p-0 rounded-4">
           <div className="d-flex">
             <div className='me-4'>
-              <img src={`../${movies.image}`} alt={movies.title} />
+              <img src={`../${movie.image}`} alt={movie.title} />
             </div>
             <div>
-              <h2 className="mt-5 mb-3">{movies.title}</h2>
-              <h4 className="">{movies.director}</h4>
-              <h4 className="my-5">{movies.genre}</h4>
-              <p className="fs-5">{movies.abstract}</p>
+              <h2 className="mt-5 mb-3">{movie.title}</h2>
+              <h4 className="">{movie.director}</h4>
+              <h4 className="my-5">{movie.genre}</h4>
+              <p className="fs-5">{movie.abstract}</p>
             </div>
           </div>
-          <div>
-            {movies.reviews.map(review => {
-              return (
-                { review }
-              )
-            })}
-          </div>
         </div>
+        <h2 className="text-center text-light-blue mb-3">Reviews:</h2>
+        {movie.reviews?.map(review => {
+          return (
+            <div className="col-12 my-3 bg-light-blue p-4 rounded-4">
+              <h3>{review.name}</h3>
+              <h4>{review.vote} <i class="fa-solid fa-star color-warning"></i></h4>
+              <h4>{review.text}</h4>
+            </div>
+          )
+        })}
       </div>
     </div>
   )

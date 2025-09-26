@@ -18,7 +18,7 @@ const Homepage = () => {
     <div className='container'>
       <div className="row">
         <div className="col-12 text-center mt-4">
-          <h1 className='text-red'>I migliori titoli in questo momento:</h1>
+          <h1 className='text-light-blue'>I migliori titoli in questo momento:</h1>
         </div>
       </div>
       <div className="row g-3 my-5">

@@ -13,8 +13,8 @@ const Header = () => {
           </div>
         </div>
         <div>
-          <Link className="btn btn-primary fs-4" to={'/'}>
-            Torna alla homepage
+          <Link className="text-decoration-none rounded-4 bg-light-blue fs-4 p-3" to={'/'}>
+            <span>Torna alla homepage</span>
           </Link>
         </div>
       </div>
