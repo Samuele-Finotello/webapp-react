@@ -13,7 +13,7 @@ const Header = () => {
           </div>
         </div>
         <div>
-          <Link className="btn btn-primary fs-4 " to={'/'}>
+          <Link className="btn btn-primary fs-4" to={'/'}>
             Torna alla homepage
           </Link>
         </div>

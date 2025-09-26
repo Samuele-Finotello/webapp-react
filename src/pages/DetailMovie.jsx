@@ -6,7 +6,7 @@ const DetailMovie = () => {
 
   const { id } = useParams()
 
-  const [movies, setMovies] = useState({})
+  const [movies, setMovies] = useState([])
 
   const fetchMovies = () => {
     axios.get(`http://localhost:3000/db/movies/${id}`).then(resp => {
@@ -30,6 +30,13 @@ const DetailMovie = () => {
               <h4 className="my-5">{movies.genre}</h4>
               <p className="fs-5">{movies.abstract}</p>
             </div>
+          </div>
+          <div>
+            {movies.reviews.map(review => {
+              return (
+                { review }
+              )
+            })}
           </div>
         </div>
       </div>
